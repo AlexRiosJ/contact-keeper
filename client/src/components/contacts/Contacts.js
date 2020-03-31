@@ -6,7 +6,6 @@ const Contacts = () => {
 	const contactContext = useContext(ContactContext);
 
 	const { contacts } = contactContext;
-
 	return (
 		<Fragment>
 			{contacts.map(contact => (
