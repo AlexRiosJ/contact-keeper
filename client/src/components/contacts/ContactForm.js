@@ -80,7 +80,7 @@ const ContactForm = () => {
 				checked={type === 'personal'}
 				onChange={onChange}
 			/>{' '}
-			<label for='personal'>Personal </label>
+			<label htmlFor='personal'>Personal </label>
 			<input
 				id='professional'
 				type='radio'
@@ -89,7 +89,7 @@ const ContactForm = () => {
 				checked={type === 'professional'}
 				onChange={onChange}
 			/>{' '}
-			<label for='professional'>Professional</label>
+			<label htmlFor='professional'>Professional</label>
 			<div>
 				<input
 					type='submit'
