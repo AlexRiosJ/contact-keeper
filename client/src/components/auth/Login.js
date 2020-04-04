@@ -55,7 +55,7 @@ const Login = props => {
 						name='email'
 						value={email}
 						onChange={onChange}
-						requiresd
+						required
 					/>
 				</div>
 				<div className='form-group'>
