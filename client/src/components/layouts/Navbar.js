@@ -18,7 +18,7 @@ const Navbar = ({ title, icon }) => {
 
 	const authLinks = (
 		<Fragment>
-			<li>Hello {user && user.name}!</li>
+			<li>Hello {user && user.name.split(' ')[0]}!</li>
 			<li>
 				<a onClick={onLogout} href='#!'>
 					<i className='fas fa-sign-out-alt'></i>{' '}
@@ -46,7 +46,12 @@ const Navbar = ({ title, icon }) => {
 					<i className={icon} /> {title}
 				</a>
 			</h1>
-			<ul>{isAuthenticated && token ? authLinks : guestLinks}</ul>
+			<ul>
+				{isAuthenticated && token ? authLinks : guestLinks}
+				<li>
+					<Link to='/about'>About</Link>
+				</li>
+			</ul>
 		</div>
 	);
 };

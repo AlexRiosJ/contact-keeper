@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layouts/Navbar';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alerts from './components/layouts/Alerts';
@@ -33,6 +34,7 @@ const App = () => {
 									<Route exact path='/about' component={About} />
 									<PrivateRoute exact path='/register' component={Register} />
 									<PrivateRoute exact path='/login' component={Login} />
+									<Route component={NotFound} />
 								</Switch>
 							</div>
 						</Fragment>
