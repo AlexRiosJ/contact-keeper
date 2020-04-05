@@ -98,6 +98,9 @@ const Register = () => {
 					className='btn btn-primary btn-block'
 				/>
 			</form>
+			<h4 className='text-center'>
+				Already have an account? <a href='/login'>Login here</a>.
+			</h4>
 		</div>
 	);
 };

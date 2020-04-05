@@ -72,11 +72,7 @@ const Login = () => {
 				/>
 			</form>
 			<h4 className='text-center'>
-				New to Contact Keeper?{' '}
-				<a className='text-success' href='/register'>
-					Create an Account
-				</a>
-				.
+				Don't have an account? <a href='/register'>Register here</a>.
 			</h4>
 		</div>
 	);
