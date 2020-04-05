@@ -2,24 +2,21 @@ import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 
-const Login = props => {
+const Login = () => {
 	const alertContext = useContext(AlertContext);
 	const authContext = useContext(AuthContext);
 
 	const { setAlert } = alertContext;
-	const { login, clearErrors, error, isAuthenticated } = authContext;
+	const { loadUser, login, clearErrors, error } = authContext;
 
 	useEffect(() => {
-		if (isAuthenticated) {
-			props.history.push('/');
-		}
-
+		loadUser();
 		if (error === 'Invalid credentials') {
 			setAlert(error, 'danger');
 			clearErrors();
 		}
 		// eslint-disable-next-line
-	}, [error, isAuthenticated, props.history]);
+	}, [error]);
 
 	const [user, setUser] = useState({
 		email: '',
@@ -74,6 +71,13 @@ const Login = props => {
 					className='btn btn-primary btn-block'
 				/>
 			</form>
+			<h4 className='text-center'>
+				New to Contact Keeper?{' '}
+				<a className='text-success' href='/register'>
+					Create an Account
+				</a>
+				.
+			</h4>
 		</div>
 	);
 };

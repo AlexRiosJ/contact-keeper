@@ -8,7 +8,7 @@ const Navbar = ({ title, icon }) => {
 	const authContext = useContext(AuthContext);
 	const contactContext = useContext(ContactContext);
 
-	const { isAuthenticated, logout, user } = authContext;
+	const { isAuthenticated, logout, user, token } = authContext;
 	const { clearContacts } = contactContext;
 
 	const onLogout = () => {
@@ -42,9 +42,11 @@ const Navbar = ({ title, icon }) => {
 	return (
 		<div className='navbar bg-primary'>
 			<h1>
-				<i className={icon} /> {title}
+				<a href='/'>
+					<i className={icon} /> {title}
+				</a>
 			</h1>
-			<ul>{isAuthenticated ? authLinks : guestLinks}</ul>
+			<ul>{isAuthenticated && token ? authLinks : guestLinks}</ul>
 		</div>
 	);
 };
